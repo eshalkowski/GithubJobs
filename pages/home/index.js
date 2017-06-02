@@ -13,6 +13,7 @@ import Layout from '../../components/Layout';
 import s from './styles.css';
 import Header from '../../components/Layout/Header';
 import JobSearchForm from '../../components/JobsSearch/JobsSearchForm';
+import JobSearchGrid from '../../components/JobsSearch/JobSearchGrid';
 
 class HomePage extends React.Component {
 
@@ -26,7 +27,8 @@ class HomePage extends React.Component {
   render() {
     return (
       <Layout className={s.content}>
-        <JobSearchForm/>
+        <JobSearchForm className={s.searchForm} />
+        <JobSearchGrid/>
       </Layout>
     );
   }

@@ -11,7 +11,11 @@
 @media screen and (max-width: 1024px) {
 
   .content {
-    padding: 0 16px;
+    padding: 0;;
   }
 
+}
+
+.searchForm {
+  padding: 10px;
 }
