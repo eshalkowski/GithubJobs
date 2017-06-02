@@ -1,19 +1,14 @@
-sudo: false
 language: node_js
-cache:
-  directories:
-    - node_modules
-notifications:
-  email: false
 node_js:
-  - stable
-before_install:
-  - npm i -g npm@^3.0.0
-before_script:
-  - npm prune
+  - '6'
+env:
+  - CXX=g++-4.8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
 script:
-  - npm run validate
-  - npm run production
-branches:
-  only:
-    - master
+  - npm run lint
+  - npm run test
