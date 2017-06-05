@@ -16,7 +16,6 @@ class JobsSearchGrid extends React.Component {
   };
 
   render() {
-    console.log(this.props.jobs);
     return <table className={cx(s.grid, 'mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp')}>
       <caption>
         Showing {this.props.jobs && this.props.jobs.length} Jobs

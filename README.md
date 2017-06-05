@@ -1,3 +1,9 @@
+## Notes
+
+-- Searching will be on dropdown change, no button click. 
+-- Did not get a chance to add on-click functioanlity to the rows to display details
+-- styling is not 100% but I think is good start to match mockup 
+-- Boilerplate was too heavy for this task, woul dreccomend lighterweight one and adding packages as needed
 
 ### Getting Started
 
