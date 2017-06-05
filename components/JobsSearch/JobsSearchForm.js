@@ -39,7 +39,7 @@ class JobsSearchForm extends React.Component {
       'Go'
     ]
   
-    return <form className={this.props.className}>
+    return <form className={this.props.className || ''}>
       <label for="citySelect">City</label>
       <Select id="citySelect" options={cities} onSelect={this.onSelect} />
       <label for="languageSelect">Language</label>

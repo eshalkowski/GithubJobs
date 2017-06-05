@@ -14,21 +14,28 @@ import s from './styles.css';
 import Header from '../../components/Layout/Header';
 import JobSearchForm from '../../components/JobsSearch/JobsSearchForm';
 import JobSearchGrid from '../../components/JobsSearch/JobSearchGrid';
+import JobsStore from '../../core/store';
+import { observer } from 'mobx-react';
 
-class HomePage extends React.Component {
+@observer class HomePage extends React.Component {
 
   static propTypes = {
-    articles: PropTypes.array.isRequired,
   };
 
+  constructor(){
+    super();
+  }
+
   componentDidMount() {
+    console.log(JobsStore.jobs);
+    JobsStore.queryJobs();
   }
  
   render() {
     return (
       <Layout className={s.content}>
         <JobSearchForm className={s.searchForm} />
-        <JobSearchGrid/>
+        <JobSearchGrid jobs={JobsStore.jobs}/>
       </Layout>
     );
   }
