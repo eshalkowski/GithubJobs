@@ -25,12 +25,12 @@ class JobsSearchGrid extends React.Component {
         { this.props.jobs.map((job) =>{
             return <tr>
               <td className={s.titleAndCompany}>
-                <div>{job.title}</div>
-                <div>{job.company}</div>
+                <div className={s.title}>{job.title}</div>
+                <div className={s.company}>{job.company} - <span className={s.type__full}>{job.type}</span></div>
               </td>
               <td className={s.locationAndDate}>
-                <div>{job.location}</div>
-                <div>{job.created_at}</div>
+                <div className={s.location}>{job.location}</div>
+                <div className={s.createdAt}>{job.created_at}</div>
               </td>
             </tr>
           })

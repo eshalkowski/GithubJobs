@@ -10,3 +10,24 @@
 .locationAndDate{
   
 }
+
+.title{
+  font-weight: bold;
+  color: blue;
+}
+
+.company {
+  opacity: .75;
+}
+
+.location {
+
+}
+
+.type__full {
+  color: green;
+}
+
+.createdAt {
+  opacity: .75;
+}
