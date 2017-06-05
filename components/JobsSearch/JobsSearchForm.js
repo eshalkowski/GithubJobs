@@ -32,20 +32,34 @@ const selectStyle = {
   width: '200px',
   margin: '0 10px 0 0'
 }
-
+/**
+ * State for query is currently kept here. WOuld be a good idea to move into store
+ * itself. Left here for brevity.
+ */
 class JobsSearchForm extends React.Component {
-
+  lang = null;
+  location = null;
+  
+  //jobStore must have queryJobs function
   static propTypes = {
-
+    jobStore: PropTypes.object.isRequired
   };
 
-  onSelect(value) {
-    console.log('The Value Is', value);
+  onCitySelect(value) {
+    console.log(this.props);
+    this.props.jobStore.location = value;
+    this.props.jobStore.queryJobs();
   }
+
+  onLanguageSelect(value) {
+    this.props.jobStore.language= value;
+    this.props.jobStore.queryJobs();
+  }
+
   render() {
     return <form className={s.searchForm}>
-      <Select style={selectStyle} label="City" options={cities} onSelect={this.onSelect} />
-      <Select style={selectStyle} label="Language" options={languages} onSelect={this.onSelect} />
+      <Select style={selectStyle} label="City" options={cities} onSelect={this.onCitySelect.bind(this)} />
+      <Select style={selectStyle} label="Language" options={languages} onSelect={this.onLanguageSelect.bind(this)} />
     </form>;
   }
 

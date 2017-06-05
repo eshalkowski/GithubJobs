@@ -27,14 +27,12 @@ import { observer } from 'mobx-react';
   }
 
   componentDidMount() {
-    console.log(JobsStore.jobs);
-    JobsStore.queryJobs();
   }
  
   render() {
     return (
       <Layout className={s.content}>
-        <JobSearchForm className={s.searchForm} />
+        <JobSearchForm jobStore={JobsStore} className={s.searchForm} />
         <JobSearchGrid jobs={JobsStore.jobs}/>
       </Layout>
     );
