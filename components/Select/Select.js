@@ -8,12 +8,15 @@
 
 import React, { PropTypes } from 'react';
 import history from '../../core/history';
+import s from './Select.css'
 
 class Select extends React.Component {
 
   static propTypes = {
     options: PropTypes.array.isRequired, //Array of Stings
-    onSelect: PropTypes.func
+    onSelect: PropTypes.func,
+    style: PropTypes.object,
+    label: PropTypes.string
   };
 
   constructor(props) {
@@ -29,11 +32,14 @@ class Select extends React.Component {
   render() {
     const options = this.props.options;
 
-    return <select onChange={this.onChange.bind(this)}>{
-    options.map((option => {
+    return <div style={this.props.style}>
+      <label className={s.label}>{this.props.label || ''}</label>
+      <select className={s.select} onChange={this.onChange.bind(this)}>{
+        options.map((option => {
           return <option key={option} value={option}>{option}</option>
         }))
-    }</select>;
+    }</select>
+    </div>;
   }
 
 }
