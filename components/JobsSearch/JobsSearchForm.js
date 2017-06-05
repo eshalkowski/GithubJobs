@@ -46,7 +46,6 @@ class JobsSearchForm extends React.Component {
   };
 
   onCitySelect(value) {
-    console.log(this.props);
     this.props.jobStore.location = value;
     this.props.jobStore.queryJobs();
   }
